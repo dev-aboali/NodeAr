@@ -10,3 +10,18 @@ simple CRUD node.js app  with passport.js authentication
 - Passport.js Authentication
 - BCrypt Hashing
 - bootstrap4
+
+#### version
+1.0.0
+
+### Usage
+
+#### installation
+$ npm install
+
+#### Run
+$ npm start
+
+
+
+
