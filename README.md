@@ -1,5 +1,5 @@
 # NodeAr 
-simple CRUD node.js app  with passport.js authentication
+simple CRUD node.js app for Articles  with passport.js authentication
 
 ## Technologies
 - Node.js
