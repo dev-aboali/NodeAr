@@ -1,0 +1,45 @@
+doctype html
+html
+    head
+        title #{title}
+        link(rel='stylesheet', href='/vendors/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/main.css')
+    body
+        nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+            .container
+                nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+                    a.navbar-brand(href='/') Nodear
+                    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+                            span.navbar-toggler-icon
+                    #navbarsExampleDefault.collapse.navbar-collapse
+                        ul.navbar-nav.mr-auto
+                            li.nav-item
+                                a.nav-link(href='/')| Home 
+                            span.sr-only (current)
+                            if user
+                                li.nav-item.mr-auto
+                                    a.nav-link(href='/articles/add') Add Article
+                        ul.navbar-nav
+                            if user
+                                li.nav-item
+                                    a.nav-link(href='/users/logout') Logout
+                            else        
+                                li.nav-item
+                                    a.nav-link(href='/users/login') Login
+                                li.nav-item
+                                    a.nav-link(href='/users/register') Sign Up     
+
+        .container.pt-4.content
+            != messages('message', locals)
+            if errors 
+                each error, i in errors 
+                    div(class="alert alert-danger") #{error.msg}
+            block content
+            br
+        footer.mx-auto.text-white.bg-dark.py-2.font-weight-bold
+            p.text-center copyrights &copy; 2018
+        script(src="/vendors/jquery/dist/jquery.min.js")    
+        script(src="/vendors/bootstrap/dist/js/bootstrap.min.js")
+        script(src="/js/main.js")
+        
+        
